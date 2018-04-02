@@ -12,14 +12,14 @@ pub mod plugin_api_v1 {
 
     /// Supported events
     #[derive(Eq, PartialEq, Hash, Debug)]
-    pub enum EVENT_SUBSCRIBE {
-        STANDARD_MESSAGE,
+    pub enum EventSubscribe {
+        StandardMessage,
     }
 
     /// Events delivery
     #[derive(Eq, PartialEq)]
-    pub enum EVENT<'a> {
-        STANDARD_MESSAGE(&'a MessageStandard),
+    pub enum Event<'a> {
+        StandardMessage(&'a MessageStandard),
     }
 
     /// Struct for handling Slack keys
@@ -42,10 +42,10 @@ pub mod plugin_api_v1 {
         fn on_plugin_load(&mut self, slack: Slack, config_path: PathBuf);
 
         /// Tells BEST-Bot which events/actions the plugin requires to work
-        fn event_subscript(&self) -> Vec<EVENT_SUBSCRIBE>;
+        fn event_subscript(&self) -> Vec<EventSubscribe>;
 
         /// Then one of the event the plugin subscript to are triggered, this functions is called and
         /// the information are handed over to the plugin.
-        fn event(&self, event: EVENT);
+        fn event(&self, event: Event);
     }
 }
