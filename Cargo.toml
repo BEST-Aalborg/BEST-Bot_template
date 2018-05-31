@@ -1,12 +1,14 @@
 [package]
 name = "template"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["nn <nn@nn.nn>"]
 
 [dependencies]
 slack = { git = "https://github.com/dvarum12/slack-rs"}
 slack_api = { git = "https://github.com/dvarum12/slack-rs-api" }
 
+slack-hook = "*"
 lazy_static = "*"
 serde = "*"
 serde_derive = "*"
+crossbeam-channel = "*"
