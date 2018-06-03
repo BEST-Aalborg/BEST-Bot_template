@@ -55,7 +55,7 @@ macro_rules! trace {
 
 #[macro_export]
 macro_rules! log {
-    ($msg:expr) => {
+    ($msg:expr) => {{
         let log = ({
             use PLUGIN_NAME;
             PLUGIN_NAME.to_string()
@@ -66,5 +66,5 @@ macro_rules! log {
             Some(s) => s.send(log).unwrap_or(()),
             _ => (),
         }
-    }
+    }}
 }
