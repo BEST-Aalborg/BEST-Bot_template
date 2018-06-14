@@ -1,6 +1,6 @@
 [package]
 name = "template"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["nn <nn@nn.nn>"]
 
 [dependencies]
@@ -11,4 +11,4 @@ slack-hook = "*"
 lazy_static = "*"
 serde = "*"
 serde_derive = "*"
-crossbeam-channel = "*"
+crossbeam-channel = "0.1.3"
